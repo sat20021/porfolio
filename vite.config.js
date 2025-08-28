@@ -18,5 +18,17 @@ export default defineConfig({
   build: {
     assetsDir: 'assets',
     emptyOutDir: true,
-  }
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
+  define: {
+    __DEFINES__: JSON.stringify({
+      NODE_ENV: process.env.NODE_ENV || 'development',
+    }),
+    global: 'globalThis',
+    'process.env': {},
+  },
 });
