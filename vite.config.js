@@ -6,6 +6,14 @@ export default defineConfig({
   server: {
     port: 1230,
   },
+  preview: {
+    host: true,
+    port: process.env.PORT || 4173,
+    allowedHosts: [
+      'porfolio-fv8a.onrender.com',
+      '.onrender.com'
+    ]
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
